@@ -8,12 +8,14 @@ html {
 }
 
 body {
-  background-image: url("../../images/bg.jpg");
+  background-image: url("../../images/bg-01.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   width: 858px;
   height: 859px;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
   padding: 0;
@@ -22,30 +24,30 @@ body {
 
 .carousel-container {
   /* perspective: 1000px; */
-  width: 624px;
-  height: 502px;
-  margin: 158px auto;
+  position: relative;
+  width: 650px;
+  height: 510px;
+  margin: 158px auto 0;
 }
 
 .carousel {
   position: relative;
-  width: 624px;
-  height: 502px;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel img {
   position: absolute;
-  width: 624px;
-  height: 502px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transform-style: preserve-3d;
   animation-fill-mode: forwards;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
-  border-radius: 20px;
-  animation-direction: reverse;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  /* border-radius: 20px; */
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); */
 }
 
 @keyframes run-1 {
@@ -55,22 +57,22 @@ body {
     z-index: 100;
   }
   100% {
-    left: -670px;
+    left: 670px;
     transform: scale(0.85);
     opacity: 0.9;
-    z-index: 50;
+    z-index: 72;
   }
 }
 
 @keyframes run-2 {
   0% {
-    left: -670px;
+    left: 670px;
     transform: scale(0.85);
     opacity: 0.9;
-    z-index: 50;
+    z-index: 72;
   }
   100% {
-    left: 0px;
+    left: 446px;
     transform: scale(0.7);
     opacity: 0.8;
     z-index: 1;
@@ -79,30 +81,66 @@ body {
 
 @keyframes run-3 {
   0% {
-    left: 0px;
+    left: 446px;
     transform: scale(0.7);
     opacity: 0.8;
     z-index: 1;
   }
   100% {
-    left: 650px;
-    transform: scale(0.85);
-    opacity: 0.9;
+    left: -446px;
+    transform: scale(0.7);
+    opacity: 0.8;
     z-index: 50;
   }
 }
 
 @keyframes run-4 {
   0% {
-    left: 650px;
+    left: -446px;
+    transform: scale(0.7);
+    opacity: 0.8;
+    z-index: 50;
+  }
+  100% {
+    left: -655px;
     transform: scale(0.85);
     opacity: 0.9;
-    z-index: 50;
+    z-index: 72;
+  }
+}
+
+@keyframes run-5 {
+  0% {
+    left: -655px;
+    transform: scale(0.85);
+    opacity: 0.9;
+    z-index: 100;
   }
   100% {
     left: 0px;
     transform: scale(1);
     opacity: 1;
-    z-index: 100;
+    z-index: 72;
   }
+}
+
+/* 文字的部分 */
+.text-container{
+margin-left: -23px
+}
+
+.text-container .text-carousel{
+  
+}
+
+.text-container .text-carousel img{
+  width: 100%;
+  
+  /* object-fit: cover; */
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  
 }

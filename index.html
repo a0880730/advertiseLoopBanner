@@ -8,18 +8,26 @@
   <body>
     <div class="carousel-container">
       <div class="carousel">
-        <img src="./images/002_0.jpg" alt="Image 1" style="animation-name: run-1;" />
-        <img src="./images/003_0.jpg" alt="Image 2" style="animation-name: run-2;"  />
-        <img src="./images/002_0.jpg" alt="Image 3" style="animation-name: run-3;"  />
-        <img src="./images/003_0.jpg" alt="Image 4" style="animation-name: run-4;"  />
-        <!-- <img src="./images/sketch005.jpg" alt="Image 5" />
-        <img src="./images/sketch006.jpg" alt="Image 6" /> -->
+        <img src="./images/p01.png" alt="Image 1" style="animation-name: run-1;" />
+        <img src="./images/p02.png" alt="Image 2" style="animation-name: run-2;"  />
+        <img src="./images/p03.png" alt="Image 3" style="animation-name: run-3;"  />
+        <img src="./images/p04.png" alt="Image 4" style="animation-name: run-4;"  />
+        <img src="./images/p05.png" alt="Image 5" style="animation-name: run-5;"  />
+      </div>
+    </div>
+    <div class="text-container">
+      <div class="text-carousel">
+        <img src="./images/t01.png" />
+        <!-- <img src="./images/t02.png" />
+        <img src="./images/t03.png" />
+        <img src="./images/t04.png" />
+        <img src="./images/t05.png" /> -->
       </div>
     </div>
 
     <script>
       window.onload = function () {
-        const runStep = ["run-1", "run-2", "run-3", "run-4"];
+        const runStep = ["run-1", "run-2", "run-3", "run-4", "run-5"];
         var carousel = document.querySelector(".carousel");
         var images = carousel.querySelectorAll("img");
         const timeStep = () => {
