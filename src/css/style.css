@@ -1,0 +1,55 @@
+:root {
+  --ease-out-circ: cubic-bezier(0, 0.55, 0.45, 1);
+}
+body {
+  overflow: hidden;
+}
+
+.images {
+  --image-count: 6;
+  /* --image-width: calc(300vw / var(--image-count)); */
+  --image-width: 300px;
+  --shift: 4vw * var(--image-count);
+  --wheel-momentum: 0;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 2s var(--ease-out-circ);
+}
+
+.images__rotator {
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  transition: 2s var(--ease-out-circ);
+}
+
+.images__item {
+  --offset-z: calc(var(--shift) + var(--wheel-momentum) * 0.2px);
+ 
+  position: absolute;
+  width: var(--image-width);
+  aspect-ratio: 9 / 16;
+  top: 50%;
+  left: 50%;
+
+  transform: translate3d(-50%, -50%, 0)
+    rotateY(calc((360deg / var(--image-count)) * var(--index)))
+    translateZ(var(--offset-z)) scale(calc(1 - var(--wheel-momentum)));
+
+  transition: transform 0.8s;
+
+  filter: blur(4px) brightness(0.6);
+  transition: transform 0.8s, filter 0.4s;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.images__item:hover {
+  filter: blur(0px) brightness(1);
+}
+

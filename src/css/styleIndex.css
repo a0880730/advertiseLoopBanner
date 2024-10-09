@@ -1,0 +1,108 @@
+html {
+  display: flex;
+  justify-content: center;
+  width: 858px;
+  height: 859px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+body {
+  background-image: url("../../images/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 858px;
+  height: 859px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-container {
+  /* perspective: 1000px; */
+  width: 624px;
+  height: 502px;
+  margin: 158px auto;
+}
+
+.carousel {
+  position: relative;
+  width: 624px;
+  height: 502px;
+}
+
+.carousel img {
+  position: absolute;
+  width: 624px;
+  height: 502px;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  border-radius: 20px;
+  animation-direction: reverse;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+@keyframes run-1 {
+  0% {
+    left: 0px;
+    transform: scale(1);
+    z-index: 100;
+  }
+  100% {
+    left: -670px;
+    transform: scale(0.85);
+    opacity: 0.9;
+    z-index: 50;
+  }
+}
+
+@keyframes run-2 {
+  0% {
+    left: -670px;
+    transform: scale(0.85);
+    opacity: 0.9;
+    z-index: 50;
+  }
+  100% {
+    left: 0px;
+    transform: scale(0.7);
+    opacity: 0.8;
+    z-index: 1;
+  }
+}
+
+@keyframes run-3 {
+  0% {
+    left: 0px;
+    transform: scale(0.7);
+    opacity: 0.8;
+    z-index: 1;
+  }
+  100% {
+    left: 650px;
+    transform: scale(0.85);
+    opacity: 0.9;
+    z-index: 50;
+  }
+}
+
+@keyframes run-4 {
+  0% {
+    left: 650px;
+    transform: scale(0.85);
+    opacity: 0.9;
+    z-index: 50;
+  }
+  100% {
+    left: 0px;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 100;
+  }
+}

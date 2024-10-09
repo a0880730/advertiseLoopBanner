@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>3D輪播圖片程式</title>
+    <link rel="stylesheet" href="./src/css/styleIndex.css" />
+  </head>
+  <body>
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="./images/002_0.jpg" alt="Image 1" style="animation-name: run-1;" />
+        <img src="./images/003_0.jpg" alt="Image 2" style="animation-name: run-2;"  />
+        <img src="./images/002_0.jpg" alt="Image 3" style="animation-name: run-3;"  />
+        <img src="./images/003_0.jpg" alt="Image 4" style="animation-name: run-4;"  />
+        <!-- <img src="./images/sketch005.jpg" alt="Image 5" />
+        <img src="./images/sketch006.jpg" alt="Image 6" /> -->
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const runStep = ["run-1", "run-2", "run-3", "run-4"];
+        var carousel = document.querySelector(".carousel");
+        var images = carousel.querySelectorAll("img");
+        const timeStep = () => {
+          setTimeout(() => {
+            for (let i = 0; i < images.length; i++) {
+              // 查看是第幾步驟
+              let step = images[i].style.animationName;
+              // 找出目前的步驟
+              let index = runStep.indexOf(step);
+              // 如果是最後一步，就回到第一步
+              if (index === runStep.length - 1) {
+                images[i].style.animationName = runStep[0];
+              } else {
+                images[i].style.animationName = runStep[index + 1];
+              }
+            }
+            timeStep();
+          }, 3000);
+        };
+        setTimeout(timeStep, 2000);
+      };
+    </script>
+  </body>
+</html>
