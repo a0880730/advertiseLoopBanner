@@ -14,14 +14,16 @@
         <img src="./images/p04.png" alt="Image 4" style="animation-name: run-4;"  />
         <img src="./images/p05.png" alt="Image 5" style="animation-name: run-5;"  />
       </div>
+      <img class="middle_pic left_pic" src="./images/PP01.png">
+      <img class="middle_pic right_pic" src="./images/PP02.png">
     </div>
     <div class="text-container">
       <div class="text-carousel">
-        <img src="./images/t01.png" />
-        <!-- <img src="./images/t02.png" />
-        <img src="./images/t03.png" />
-        <img src="./images/t04.png" />
-        <img src="./images/t05.png" /> -->
+        <img class="_active" src="./images/t01.png" />
+        <img class="_hide" src="./images/t02.png" style="display: none;"/>
+        <img class="_hide" src="./images/t03.png" style="display: none;"/>
+        <img class="_hide" src="./images/t04.png" style="display: none;"/>
+        <img class="_hide" src="./images/t05.png" style="display: none;"/>
       </div>
     </div>
 
@@ -30,6 +32,10 @@
         const runStep = ["run-1", "run-2", "run-3", "run-4", "run-5"];
         var carousel = document.querySelector(".carousel");
         var images = carousel.querySelectorAll("img");
+
+        var textCarousel = document.querySelector(".text-carousel");
+        var textImages = textCarousel.querySelectorAll("img");
+
         const timeStep = () => {
           setTimeout(() => {
             for (let i = 0; i < images.length; i++) {
@@ -37,17 +43,25 @@
               let step = images[i].style.animationName;
               // 找出目前的步驟
               let index = runStep.indexOf(step);
+              console.log(index)
               // 如果是最後一步，就回到第一步
               if (index === runStep.length - 1) {
                 images[i].style.animationName = runStep[0];
+                textImages[i].style.display = "";
+                textImages[i].classList.add("_active");
               } else {
                 images[i].style.animationName = runStep[index + 1];
+                textImages[i].classList.remove("_active");
+                textImages[i].classList.add("_hide");
               }
             }
             timeStep();
           }, 3000);
         };
-        setTimeout(timeStep, 2000);
+
+        setTimeout(timeStep, 4000);
+        
+
       };
     </script>
   </body>

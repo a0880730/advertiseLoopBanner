@@ -50,7 +50,7 @@ body {
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); */
 }
 
-@keyframes run-1 {
+@keyframes run-2 {
   0% {
     left: 0px;
     transform: scale(1);
@@ -64,7 +64,7 @@ body {
   }
 }
 
-@keyframes run-2 {
+@keyframes run-3 {
   0% {
     left: 670px;
     transform: scale(0.85);
@@ -74,31 +74,31 @@ body {
   100% {
     left: 446px;
     transform: scale(0.7);
-    opacity: 0.8;
+    opacity: 0.6;
     z-index: 1;
-  }
-}
-
-@keyframes run-3 {
-  0% {
-    left: 446px;
-    transform: scale(0.7);
-    opacity: 0.8;
-    z-index: 1;
-  }
-  100% {
-    left: -446px;
-    transform: scale(0.7);
-    opacity: 0.8;
-    z-index: 50;
   }
 }
 
 @keyframes run-4 {
   0% {
+    left: 446px;
+    transform: scale(0.7);
+    opacity: 0.6;
+    z-index: 1;
+  }
+  100% {
     left: -446px;
     transform: scale(0.7);
-    opacity: 0.8;
+    opacity: 0.6;
+    z-index: 50;
+  }
+}
+
+@keyframes run-5 {
+  0% {
+    left: -446px;
+    transform: scale(0.7);
+    opacity: 0.6;
     z-index: 50;
   }
   100% {
@@ -109,7 +109,7 @@ body {
   }
 }
 
-@keyframes run-5 {
+@keyframes run-1 {
   0% {
     left: -655px;
     transform: scale(0.85);
@@ -125,22 +125,72 @@ body {
 }
 
 /* 文字的部分 */
-.text-container{
-margin-left: -23px
+.text-container {
 }
 
-.text-container .text-carousel{
-  
+.text-container .text-carousel {
 }
 
-.text-container .text-carousel img{
+.text-container .text-carousel img {
+  position: absolute;
   width: 100%;
-  
   /* object-fit: cover; */
   transform-style: preserve-3d;
   animation-fill-mode: forwards;
-  animation-duration: 1s;
+  animation-duration: 1.0s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
+  opacity: 1;
+  left: -8px;
+  transition: all 1s;
+}
+
+.text-carousel img._hide {
+  animation-name: run-text-1;
+}
+.text-carousel img._active {
+  animation-name: run-text-2;
+}
+
+@keyframes run-text-1 {
+  0% {
+    left: -8px;
+    opacity: 1;
+  }
+  50% {
+    left: 100px;
+    opacity: 0;
+  }
+  100% {
+    left: -600px;
+    opacity: 0;
+  }
+}
+
+@keyframes run-text-2 {
+  0% {
+    left: -600px;
+    opacity: 0;
+  }
+  100% {
+    left: -11px;
+    opacity: 1;
+  }
+}
+
+.middle_pic {
+
+  position: absolute;
+  bottom: -30px;
+  width: 200px;
+  z-index: 100;
   
+}
+
+.left_pic{
+  left: -110px;
+}
+
+.right_pic{
+  right: -110px;
 }
